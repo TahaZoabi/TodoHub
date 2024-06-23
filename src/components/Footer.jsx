@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Github } from "lucide-react";
 const Footer = () => {
   return (
     <div className="absolute bottom-0 left-0 right-0 bg-background py-8 px-4 flex flex-col items-center text-center text-gray-600">
-      <p className="mb-4">All Rights Reserved &#169; Taha Zoabi</p>
+      <p className="mb-4 text-lg">All Rights Reserved &#169; Taha Zoabi</p>
       <div className="flex gap-4">
         <a
           href="#"

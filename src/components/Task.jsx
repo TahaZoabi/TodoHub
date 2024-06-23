@@ -1,19 +1,22 @@
 import { useState } from "react";
 
 const Task = () => {
-  const [tasks, setTasks] = useState(["hello", "world"]);
+  const [tasks, setTasks] = useState([
+    "hello how are you today?",
+    "i want to get better at coding :(",
+  ]);
 
   return (
-    <div className=" pt-6 flex justify-center items-center ">
-      <div className="w-full sm:max-w-[500px] md:max-w-[600px]  ">
-        <div className=" p-4 rounded-lg shadow-lg  bg-background ">
-          {tasks.map((task, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between mb-3 border-b border-gray-400  p-2"
-            >
+    <div className="pt-6 flex justify-center items-center">
+      <div className="w-full max-w-[500px] ">
+        {tasks.map((task, index) => (
+          <div
+            key={index}
+            className="p-4 rounded-lg shadow-lg bg-background border mb-4"
+          >
+            <div className="flex items-center justify-between mb-3 border-b  border-gray-400 p-3">
               <p className="text-lg text-primary">{task}</p>
-              <div className="flex space-x-2 ">
+              <div className="flex space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -45,8 +48,8 @@ const Task = () => {
                 </svg>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const Input = () => {
 
   return (
     <div className=" pt-16 flex justify-center items-start  ">
-      <div className="w-full sm:max-w-[500px] md:max-w-[600px]  p-4 rounded-lg shadow-lg bg-background">
+      <div className="w-full max-w-[500px]   p-4 rounded-lg shadow-lg bg-background border">
         <label htmlFor="todo" className="text-lg font-bold mb-2 block"></label>
         <div className="flex">
           <input
