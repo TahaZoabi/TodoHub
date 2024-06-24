@@ -15,7 +15,7 @@ const Task = () => {
             className="p-4 rounded-lg shadow-lg bg-background border mb-4"
           >
             <div className="flex items-center justify-between mb-3 border-b  border-gray-400 p-3">
-              <p className="text-lg text-primary">{task}</p>
+              <p className="text-lg text-black">{task}</p>
               <div className="flex space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

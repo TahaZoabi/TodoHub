@@ -18,7 +18,7 @@ const Input = () => {
           />
           <button
             type="button"
-            className="ml-2 px-4 py-2 bg-button text-white rounded-lg shadow-md hover:bg-button-hover focus:outline-none focus:ring-2 focus:ring-primary-dark"
+            className="ml-2 px-4 py-2 bg-button text-text rounded-lg shadow-md hover:bg-button-hover focus:outline-none focus:ring-2 focus:ring-primary-dark"
             onClick={handleAddTask}
           >
             Add Task

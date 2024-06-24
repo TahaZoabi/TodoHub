@@ -6,16 +6,17 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: "#004d99", // Default color for primary elements
+          Secondary: "#CCCCCC",
         },
         button: {
-          DEFAULT: "#ff8c00", // Default color for buttons
-          hover: "#e68000", // Secondary color for button hover effect
+          DEFAULT: "#79B8FF", // Default color for buttons
+          hover: "#0070F3", // Secondary color for button hover effect
         },
         background: {
           DEFAULT: "#f0f0f0", // Default background color
         },
-        accent: {
-          DEFAULT: "#4caf50", // Default accent color
+        text: {
+          DEFAULT: "#FFFFFF",
         },
       },
     },
