@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 const Task = ({ text, handleEditBtn, handleDeleteBtn }) => {
@@ -11,9 +11,9 @@ const Task = ({ text, handleEditBtn, handleDeleteBtn }) => {
 
   const handleEditClick = () => {
     if (isEditing) {
-      handleEditBtn(editText); // Save edited text
+      handleEditBtn(editText);
     }
-    setIsEditing(!isEditing); // Toggle edit mode
+    setIsEditing(!isEditing);
   };
 
   return (
@@ -34,7 +34,7 @@ const Task = ({ text, handleEditBtn, handleDeleteBtn }) => {
             <div className="flex space-x-2">
               {isEditing ? (
                 <svg
-                  onClick={handleEditClick} // Save edited text on click
+                  onClick={handleEditClick}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ const Task = ({ text, handleEditBtn, handleDeleteBtn }) => {
                 </svg>
               ) : (
                 <svg
-                  onClick={() => setIsEditing(true)} // Enable editing mode
+                  onClick={() => setIsEditing(true)}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

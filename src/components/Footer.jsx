@@ -8,19 +8,22 @@ const Footer = () => {
       </p>
       <div className="flex gap-4">
         <a
-          href="#"
+          href="https://www.linkedin.com/in/taha-zoabi-788420306/"
+          target="_blank"
           className="text-gray-600 hover:text-button-hover transition-colors duration-300"
         >
           <Linkedin className="w-6 h-6" />
         </a>
         <a
-          href="#"
+          href="https://x.com/dev_range"
+          target="_blank"
           className="text-gray-600 hover:text-button-hover transition-colors duration-300"
         >
           <Twitter className="w-6 h-6" />
         </a>
         <a
-          href="#"
+          href="https://github.com/TahaZoabi"
+          target="_blank"
           className="text-gray-600 hover:text-button-hover transition-colors duration-300"
         >
           <Github className="w-6 h-6" />

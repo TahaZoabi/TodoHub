@@ -1,4 +1,3 @@
-// Input.jsx
 import PropTypes from "prop-types";
 
 const Input = ({ onChange, value }) => {
@@ -8,7 +7,7 @@ const Input = ({ onChange, value }) => {
       id="todo"
       name="todo"
       className="border border-gray-300 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:border-button flex-1"
-      placeholder="Enter task"
+      placeholder="Enter task..."
       value={value}
       onChange={onChange}
     />
