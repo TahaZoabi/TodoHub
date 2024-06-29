@@ -1,29 +1,68 @@
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Task = ({ text }) => {
+const Task = ({ text, handleEditBtn, handleDeleteBtn }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(text);
+
+  const handleInputChange = (e) => {
+    setEditText(e.target.value);
+  };
+
+  const handleEditClick = () => {
+    if (isEditing) {
+      handleEditBtn(editText); // Save edited text
+    }
+    setIsEditing(!isEditing); // Toggle edit mode
+  };
+
   return (
     <div className="pt-6 flex justify-center items-center">
       <div className="w-full max-w-[500px]">
         <div className="p-4 rounded-lg shadow-lg bg-background border mb-4">
           <div className="flex items-center justify-between mb-3 border-b border-gray-400 p-3">
-            <p className="text-lg text-black">{text}</p>
+            {isEditing ? (
+              <input
+                type="text"
+                value={editText}
+                onChange={handleInputChange}
+                className="border border-gray-300 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:border-button flex-1"
+              />
+            ) : (
+              <p className="text-lg text-black">{text}</p>
+            )}
             <div className="flex space-x-2">
+              {isEditing ? (
+                <svg
+                  onClick={handleEditClick} // Save edited text on click
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  className="w-6 h-6 cursor-pointer rounded-md text-button hover:text-button-hover ml-2"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              ) : (
+                <svg
+                  onClick={() => setIsEditing(true)} // Enable editing mode
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 cursor-pointer rounded-md text-button hover:text-button-hover"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+                  />
+                </svg>
+              )}
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 cursor-pointer rounded-md text-button hover:text-button-hover"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
-                />
-              </svg>
-
-              <svg
+                onClick={handleDeleteBtn}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -47,6 +86,8 @@ const Task = ({ text }) => {
 
 Task.propTypes = {
   text: PropTypes.string.isRequired,
+  handleEditBtn: PropTypes.func.isRequired,
+  handleDeleteBtn: PropTypes.func.isRequired,
 };
 
 export default Task;
